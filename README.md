@@ -1,6 +1,6 @@
 # Excel图片提取工具
 
-一个用于从Excel文件中提取浮动组合图片的GUI工具。
+一个用于从Excel文件中提取浮动组合图片的GUI工具，支持图片合并和智能组织功能。
 
 ## 功能特点
 
@@ -9,17 +9,55 @@
 - 📊 实时显示提取进度和日志
 - 🎯 支持多种图片格式（PNG、JPG、GIF等）
 - 💻 友好的图形用户界面
+- 🔧 图片合并功能（需要Pillow库）
+- 📦 提供独立可执行文件，无需安装Python环境
+- 🎨 自定义图标和界面设计
 
 ## 系统要求
 
+### 使用可执行文件（推荐）
+- Windows 操作系统
+- 无需安装Python或其他依赖
+
+### 使用Python脚本
 - Python 3.6 或更高版本
 - Windows/macOS/Linux 操作系统
-- 无需额外安装依赖包（使用Python标准库）
+- 可选：Pillow库（用于图片合并功能）
+
+## 安装说明
+
+### 方式一：直接使用可执行文件（推荐）
+1. 下载 `excel_image_extractor.exe`
+2. 双击运行即可，无需安装
+
+### 方式二：运行Python脚本
+1. 确保已安装Python 3.6+
+2. 安装可选依赖（用于图片合并功能）：
+   ```bash
+   pip install pillow
+   ```
+3. 运行程序：
+   ```bash
+   python excel_image_extractor.py
+   ```
+
+## 快速开始
+
+1. **下载并运行**：双击 `excel_image_extractor.exe` 启动程序
+2. **选择Excel文件**：点击"浏览"按钮选择包含图片的Excel文件
+3. **选择输出目录**：点击"选择"按钮指定图片保存位置
+4. **开始提取**：点击"开始提取"按钮，程序将自动处理并显示进度
 
 ## 使用方法
 
-### 1. 运行程序
+### 1. 启动程序
 
+**使用可执行文件：**
+```
+双击 excel_image_extractor.exe
+```
+
+**使用Python脚本：**
 ```bash
 python excel_image_extractor.py
 ```
@@ -40,11 +78,15 @@ python excel_image_extractor.py
 ## 文件结构
 
 ```
-提取组合图片/
-├── excel_image_extractor.py  # 主程序文件
+excel_image_extractor/
+├── excel_image_extractor.py  # 主程序文件（Python脚本）
+├── excel_image_extractor.exe # 独立可执行文件
 ├── requirements.txt          # 依赖包列表
-├── README.md                # 使用说明
-└── 新建 XLSX 工作表.xlsx     # 测试文件
+├── README.md                # 使用说明文档
+├── 图片.ico                 # 程序图标文件
+└── 测试数据/                # 测试文件目录
+    ├── 123.xlsx             # 测试Excel文件1
+    └── 新建 XLSX 工作表.xlsx  # 测试Excel文件2
 ```
 
 ## 技术原理
@@ -68,17 +110,37 @@ python excel_image_extractor.py
 1. **无法找到图片**
    - 确保Excel文件中确实包含图片
    - 检查图片是否为嵌入式图片而非链接
+   - 验证Excel文件格式为.xlsx（不支持.xls）
 
 2. **程序运行错误**
-   - 确保Python版本为3.6或更高
-   - 检查Excel文件是否损坏
+   - **使用可执行文件时**：确保Windows系统兼容性，尝试以管理员身份运行
+   - **使用Python脚本时**：确保Python版本为3.6或更高
+   - 检查Excel文件是否损坏或密码保护
    - 确保有足够的磁盘空间
 
 3. **权限问题**
    - 确保对输出目录有写入权限
    - 以管理员身份运行程序（如需要）
+   - 检查防病毒软件是否阻止程序运行
+
+4. **图片合并功能不可用**
+   - 确保已安装Pillow库：`pip install pillow`
+   - 可执行文件版本已内置图片处理功能
+
+5. **可执行文件无法启动**
+   - 检查Windows Defender或其他安全软件设置
+   - 确保文件完整下载，未被损坏
+   - 尝试在不同位置运行程序
 
 ## 更新日志
+
+### v2.0.0
+- 🆕 添加独立可执行文件，无需Python环境
+- 🔧 集成图片合并功能（基于Pillow库）
+- 🎨 添加自定义程序图标
+- 📁 改进文件组织结构
+- 🛠️ 增强错误处理和用户提示
+- 📝 完善文档和使用说明
 
 ### v1.0.0
 - 初始版本发布
