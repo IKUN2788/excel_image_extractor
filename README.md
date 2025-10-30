@@ -1,4 +1,6 @@
 # Excel图片提取工具
+<img width="998" height="865" alt="PixPin_2025-10-30_11-28-53" src="https://github.com/user-attachments/assets/5f38f587-9b17-42cf-b4a6-9feb7f55ba4f" />
+
 
 一个用于从Excel文件中提取浮动组合图片的GUI工具，支持图片合并和智能组织功能。
 
